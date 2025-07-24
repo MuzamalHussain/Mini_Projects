@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="home">
+    <h1>🧠 Mini Quiz App</h1>
+    <p>Select a category and start!</p>
+    <select id="category">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
+    <button onclick="startQuiz()">Start Quiz</button>
+    
+  </div>
+
+  <div class="container" id="quiz" style="display: none;">
+    <div id="questionBox"></div>
+    <div id="optionsBox"></div>
+     <div class="button-row">
+    <button id="backBtn" onclick="goBack()">Back</button>
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+  </div>
+  </div>
+
+  <div class="container" id="result" style="display: none;">
+    <h2>🎉 Quiz Finished</h2>
+    <p id="scoreBox"></p>
+    <button onclick="restartQuiz()">Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

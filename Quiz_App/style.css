@@ -1,0 +1,82 @@
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+select, button {
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  background: royalblue;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: darkblue;
+}
+
+.option {
+  background: #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #ddd;
+}
+.option.selected {
+  background: lightgreen;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#backBtn, #nextBtn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#backBtn {
+  background-color: #ccc;
+  color: black;
+  margin-right: 10px;
+}
+
+#backBtn:hover, #nextBtn:hover {
+  opacity: 0.85;
+}
