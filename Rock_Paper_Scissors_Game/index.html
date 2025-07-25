@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="mainContainer" class="container">
+        <h1>Rock Paper Scissors</h1>
+
+        <button id="start-btn">Start Game</button>
+
+        <div id="game-form" style="display: none;">
+
+            <div>
+                <input type="text" id="player-name" placeholder="Enter your name" required />
+            </div>
+
+            <div>
+                <select id="user-choice">
+                    <option value="">Select Choice</option>
+                    <option value="rock">✊ Rock</option>
+                    <option value="paper">✋ Paper</option>
+                    <option value="scissors">✌ Scissors</option>
+                </select>
+            </div>
+
+            
+        </div>
+        <button id="play-btn">Your Turn</button>
+
+       <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+         <div id="loader" class="loader" style="display: none;"></div>
+       </div>
+        <div id="toggle-history" class="toggle-btn">
+            <i class="fas fa-history">📜</i>
+        </div>
+
+
+        <!-- Floating Match History Icon Button -->
+        <!-- <div id="toggle-history-btn" title="Match History"></div> -->
+        <!-- Match History Toggle Button -->
+        
+
+
+    </div>
+
+    <!-- Modal -->
+
+
+    <!-- Match History Modal -->
+    <div id="history-modal" class="modal_2 hidden">
+        <span id="close-history" class="close-btn">&times;</span>
+        <div class="modal-content">
+            <h2>Match History</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-btn">&times;</span>
+            <h2>Result</h2>
+
+            <div class="modal-body">
+                <div class="modal-row_1">
+                    <div class="modal-row_2">
+                        <p><strong>Player 1</strong></p>
+                        <p><span id="modal-player-name"></span></p>
+                        <p><span id="modal-player-choice"></span></p>
+                    </div>
+                    <div class="modal-row_3">
+                        <p><strong>Player 2</strong></p>
+                        <p>Robot</p>
+                        <p><span id="modal-computer-choice"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="modal-result"></h3>
+            <div class="modal-footer" id="modal-footer-message"></div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
