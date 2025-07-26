@@ -37,7 +37,7 @@ playBtn.addEventListener('click', () => {
 
     setTimeout(() => {
         loader.style.display = 'none';
-
+        
         const choices = ['rock', 'paper', 'scissors'];
         const computerChoice = choices[Math.floor(Math.random() * 3)];
         const result = getResult(userChoice, computerChoice);

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>BMI Calculator</h2>
+
+        <!-- Height Unit Selector -->
+        <label for="unit">Select Height Unit:</label>
+        <div class="unit-options" >
+            <label >
+                <input type="radio" name="unit" value="cm" checked onchange="toggleHeightInputs()"> cm
+            </label>
+            <label>
+                <input type="radio" name="unit" value="ft" onchange="toggleHeightInputs()"> ft/inch
+            </label>
+            <label>
+                <input type="radio" name="unit" value="m" onchange="toggleHeightInputs()"> meter
+            </label>
+        </div>
+
+
+        <!-- Height Inputs -->
+        <div id="height-cm">
+            <input type="number" id="height" placeholder="Enter height">
+        </div>
+
+        <div id="height-ft" style="display: none; justify-content: center;">
+            <input style="width: 37%; margin-right: 5px;" type="number" id="feet" placeholder="Feet">
+            <input style="width: 30%;" type="number" id="inches" placeholder="Inches">
+        </div>
+
+        <div id="height-m" style="display: none;">
+            <input type="number" id="height-meters" placeholder="Enter height in meters">
+        </div>
+
+        <input type="number" id="weight" placeholder="Enter weight in kg">
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <h2>BMI Result</h2>
+            <p id="bmiValue"></p>
+            <p id="bmiStatus" class="status"></p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
