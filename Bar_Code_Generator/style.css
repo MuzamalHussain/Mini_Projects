@@ -1,0 +1,221 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Glitch overlay */
+#glitchOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 0, 0.2),
+        rgba(0, 255, 0, 0.2) 2px,
+        rgba(0, 0, 255, 0.2) 4px
+    );
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.2s ease-in-out;
+    backdrop-filter: blur(3px);
+    
+}
+
+#glitchOverlay.active {
+    opacity: 1;
+    animation: glitch-move 0.5s steps(2) 2;
+}
+
+@keyframes glitch-move {
+    0% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(-15px,5px) scale(1.1); }
+    50% { transform: translate(15px,-5px) scale(0.95); }
+    75% { transform: translate(-5px,10px) scale(1.05); }
+    100% { transform: translate(0,0) scale(1); }
+}
+
+/* Container */
+.container {
+    max-width: auto;
+    background: #121212;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,255,128,0.3);
+    border: 1px solid #00ff80;
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+@keyframes scale-spin {
+    0% { transform: scale(1) rotate(0deg); filter: blur(0); }
+    20% { transform: scale(1.2) rotate(10deg); filter: blur(4px); }
+    40% { transform: scale(0.9) rotate(-8deg); filter: blur(2px); }
+    60% { transform: scale(1.05) rotate(5deg); filter: blur(1px); }
+    80% { transform: scale(1) rotate(0deg); filter: blur(0); }
+    100% { transform: scale(1) rotate(0deg); filter: blur(0); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #00ff80;
+    letter-spacing: 1px;
+}
+
+/* Input section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid #00ff80;
+    background: #1e1e1e;
+    color: #00ff80;
+    outline: none;
+    transition: box-shadow 0.5s ease, color 0.5s ease;
+    position: relative;
+    z-index: 2;
+
+}
+
+input:focus {
+    box-shadow: 0 0 10px #00ff80;
+    color: #00ff80;
+}
+::placeholder {
+    color: white;
+    opacity: 0.6;
+    font-size: 13px;
+}
+.typing-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    font-size: 50px;
+    color: #00ff80;
+    font-weight: 800;
+    text-shadow: 0 0 8px #00ff80;
+    animation: scale-pop 0.9s ease;
+    opacity: 0;
+}
+
+@keyframes scale-pop {
+    0% { transform: scale(2); opacity: 1; color: #ff0000; }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #00ff80;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    
+}
+.reset-btn-wrapper{
+    width: 100%;
+   display: flex;
+   justify-content: start;
+   gap:20px
+}
+
+button:hover {
+    background-color: #00cc66;
+}
+
+.output-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.output-section h2 {
+    color: #00ff80;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* QR & Barcode pop animation */
+#qrcode, #barcode {
+    margin-top: 10px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+#qrcode.show, #barcode.show {
+    transform: scale(1);
+}
+
+#qrcode img {
+    display: block;
+    margin: auto;
+    width: 100px;
+}
+#barcode{
+    max-height: 80px;
+    width:auto
+}
+#qrcode{
+    width: auto
+}
+.codes-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.loader {
+    border: 6px solid #222;
+    border-top: 6px solid #00ff80;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
